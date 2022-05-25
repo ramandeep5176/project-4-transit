@@ -1,22 +1,34 @@
 import React from "react";
 import styled from "styled-components";
 import { FaBars } from "react-icons/fa";
+import { links } from "../utils/constants";
 import { Link } from "react-router-dom";
 const Navbar = () => {
   return (
-    <Wrapper>
+    <NavContainer>
       <div className="nav-center">
         <div className="nav-header">
           <button type="button" className="nav-toggle">
             <FaBars />
           </button>
         </div>
+
+        <ul className="nav-links">
+          {links.map((link) => {
+            const { id, text, url } = link;
+            return (
+              <li key={id}>
+                <Link to={url}>{text}</Link>
+              </li>
+            );
+          })}
+        </ul>
       </div>
-    </Wrapper>
+    </NavContainer>
   );
 };
 
-const Wrapper = styled.nav`
+const NavContainer = styled.nav`
   height: 5rem;
   display: flex;
   align-items: center;

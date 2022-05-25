@@ -1,7 +1,12 @@
 import React from "react";
 import styled from "styled-components";
+import { Hero } from "../components/Index";
 const HomePage = () => {
-  return <div>HomePage</div>;
+  return (
+    <>
+      <Hero></Hero>
+    </>
+  );
 };
 
 export default HomePage;

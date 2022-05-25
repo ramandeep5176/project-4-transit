@@ -1,17 +1,30 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { FaTimes } from "react-icons/fa";
+import { links } from "../utils/constants";
+
 import styled from "styled-components";
 
 const Sidebar = () => {
+  const isOpen = true;
   return (
     <SidebarContainer>
-      <aside>
+      <aside className={`${isOpen ? "sidebar show-sidebar" : "show-sidebar"}`}>
         <div className="sidebar-header">
           <button className="close-btn" type="button">
             <FaTimes />
           </button>
         </div>
+        <ul className="links">
+          {links.map((link) => {
+            const { id, text, url } = link;
+            return (
+              <li key={id}>
+                <Link to={url}>{text}</Link>
+              </li>
+            );
+          })}
+        </ul>
       </aside>
     </SidebarContainer>
   );
