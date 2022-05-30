@@ -6,13 +6,13 @@ import two from "../assets/two.jpg";
 const Hero = () => {
   return (
     <Wrapper className="section-center">
-      <article>
+      <article className="container">
         <Link to="/Courier">
           <img className="img img1" src={one} alt="" />
           <h3>Courier</h3>
         </Link>
       </article>
-      <article>
+      <article className="container">
         <Link to="/BigRig">
           <img className="img img2" src={two} alt="" />
           <h3>Big Rig</h3>
@@ -23,25 +23,30 @@ const Hero = () => {
 };
 
 const Wrapper = styled.section`
-  min-height: 60vh;
-  min-width: 60vw;
+  max-width: 80vw;
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 5rem;
+  grid-template-columns: 1fr;
   place-items: center;
 
+  gap: 2rem;
+
   .img {
-    height: 40vh;
-    width: 40vw;
+    height: 100%;
+    width: 100%;
+    border-radius: 01.725rem;
+    object-fit: cover;
+  }
+  h3 {
+    text-align: center;
+    text-decoration: none;
   }
 
-  @media (min-width: 992px) {
+  @media (min-width: 655px) {
     height: calc(100vh - 5rem);
-
-    gap: 9rem;
-
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
     .img {
-      height: 70vh;
+      height: 50vh;
     }
   }
 `;

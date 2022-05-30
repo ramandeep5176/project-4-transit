@@ -3,16 +3,18 @@ import styled from "styled-components";
 import { FaBars } from "react-icons/fa";
 import { links } from "../utils/constants";
 import { Link } from "react-router-dom";
+import { useProductsContext } from "../context/products_context";
 const Navbar = () => {
+  const { openSidebar } = useProductsContext();
   return (
     <NavContainer>
       <div className="nav-center">
         <div className="nav-header">
-          <button type="button" className="nav-toggle">
+          <button type="button" className="nav-toggle" onClick={openSidebar}>
             <FaBars />
           </button>
+<h1>JSRF.co</h1>
         </div>
-
         <ul className="nav-links">
           {links.map((link) => {
             const { id, text, url } = link;

@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-// import { GetListUtilityClass, ListClasses } from "@mui/material/List";
+import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 export class Confirm extends Component {
   continue = (e) => {
@@ -17,23 +18,51 @@ export class Confirm extends Component {
     } = this.props;
 
     return (
-      <React.Fragment>
+      <Wrapper>
         <div>
-          <h3>{FirstName}</h3>
-          <h3>{LastName}</h3>
-          <h3>{Address}</h3>
-          <h3>{Phone}</h3>
-          <h3>{Email}</h3>
+          <h4>{FirstName}</h4>
+          <h4>{LastName}</h4>
+          <h4>{Address}</h4>
+          <h4>{Phone}</h4>
+          <h4>{Email}</h4>
         </div>
-        <button label="Confirm & Continue" onClick={this.continue}>
-          next
-        </button>
-        <button label="back" onClick={this.back}>
-          back
-        </button>
-      </React.Fragment>
+        <div className="btn-container">
+          <button
+            className="btn"
+            label="Confirm & Continue"
+            onClick={this.continue}
+          >
+            Submit
+          </button>
+          <button className="btn" label="back" onClick={this.back}>
+            back
+          </button>
+        </div>
+        <p>**Please check info & click submit.</p>
+      </Wrapper>
     );
   }
 }
+const Wrapper = styled.section`
+  min-height: 60vh;
+  min-width: 60vw;
+  display: grid;
+  place-items: center;
+
+  .btn-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+    text-align: center;
+  }
+
+  @media screen and (min-width: 655px) {
+    .btn-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+  }
+`;
 
 export default Confirm;

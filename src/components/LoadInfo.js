@@ -38,10 +38,10 @@ export class LoadInfo extends Component {
         />
         <br />
 
-        <button label="Continue" onClick={this.continue}>
+        <button className="btn" label="Continue" onClick={this.continue}>
           next
         </button>
-        <button label="back" onClick={this.back}>
+        <button className="btn" label="back" onClick={this.back}>
           back
         </button>
       </React.Fragment>

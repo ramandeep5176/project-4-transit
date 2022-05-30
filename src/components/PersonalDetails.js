@@ -40,7 +40,7 @@ export class PersonalDetails extends Component {
           defaultValue={values.Address}
         />
         <br />
-        <button label="Continue" onClick={this.continue}>
+        <button className="btn" label="Continue" onClick={this.continue}>
           next
         </button>
       </React.Fragment>
