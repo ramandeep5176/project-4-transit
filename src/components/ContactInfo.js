@@ -13,8 +13,8 @@ export class ContactInfo extends Component {
     Address: "",
     Phone: "",
     Email: "",
-    xx: "",
-    yy: "",
+    From: "",
+    To: "",
   };
 
   // Go to next step
@@ -39,8 +39,8 @@ export class ContactInfo extends Component {
 
   render() {
     const { step } = this.state;
-    const { FirstName, LastName, Address, Phone, Email, xx, yy } = this.state;
-    const values = { FirstName, LastName, Address, Phone, Email, xx, yy };
+    const { FirstName, LastName, Address, Phone, Email, From, To } = this.state;
+    const values = { FirstName, LastName, Address, Phone, Email, From, To };
 
     switch (step) {
       case 1:
@@ -69,10 +69,7 @@ export class ContactInfo extends Component {
           />
         );
       case 4:
-        return <Recipt
-        
-        
-        />;
+        return <Recipt />;
     }
   }
 }

@@ -13,7 +13,9 @@ const Navbar = () => {
           <button type="button" className="nav-toggle" onClick={openSidebar}>
             <FaBars />
           </button>
-<h1>JSRF.co</h1>
+          <Link to="/">
+            <h1>JSRF.co</h1>
+          </Link>
         </div>
         <ul className="nav-links">
           {links.map((link) => {

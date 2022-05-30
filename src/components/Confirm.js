@@ -14,17 +14,26 @@ export class Confirm extends Component {
   };
   render() {
     const {
-      values: { FirstName, LastName, Address, Phone, Email, xx, yy },
+      values: { FirstName, LastName, Address, Phone, Email, From, To },
     } = this.props;
 
     return (
       <Wrapper>
         <div>
-          <h4>{FirstName}</h4>
-          <h4>{LastName}</h4>
-          <h4>{Address}</h4>
-          <h4>{Phone}</h4>
-          <h4>{Email}</h4>
+          <h3 className="header">Personal Info.</h3>
+          <p>FirstName</p> <h5>{FirstName}</h5>
+          <p>LastName</p> <h5>{LastName}</h5>
+          <p>Address</p> <h5>{Address}</h5>
+          <p>Email</p> <h5>{Email}</h5>
+          <p>Phone</p> <h5>{Phone}</h5>
+          <br />
+          <br />
+          <h3 className="header">Load Info.</h3>
+          <p>From</p> <h5>{From}</h5>
+          <p>To</p> <h5>{To}</h5>
+          {/* <p>Address</p> <h5>{Address}</h5>
+          <p>Email</p> <h5>{Email}</h5>
+          <p>Email</p> <h5>{Email}</h5> */}
         </div>
         <div className="btn-container">
           <button
@@ -35,7 +44,7 @@ export class Confirm extends Component {
             Submit
           </button>
           <button className="btn" label="back" onClick={this.back}>
-            back
+            Edit
           </button>
         </div>
         <p>**Please check info & click submit.</p>
@@ -49,6 +58,9 @@ const Wrapper = styled.section`
   display: grid;
   place-items: center;
 
+  .header {
+    text-decoration: underline;
+  }
   .btn-container {
     display: grid;
     grid-template-columns: 1fr;
