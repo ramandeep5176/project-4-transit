@@ -44,6 +44,7 @@ export class ContactInfo extends Component {
 
     switch (step) {
       case 1:
+      default:
         return (
           <PersonalDetails
             nextStep={this.nextStep}
